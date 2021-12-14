@@ -1,0 +1,9 @@
+.bar {
+    border: 0.05vw solid black;
+    width: 0.6vw;
+    margin: 0.1vw;
+    background-color: #fd0081;
+}
+#espacoBarras{
+    height: 80vh;
+}
