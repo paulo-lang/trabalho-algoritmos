@@ -33,26 +33,83 @@ insertionSort = (array) => {
     for (outer = 1; outer < array.length; outer++) {
         for (inner = 0; inner < outer; inner++) {
             numeroComparacoes++;
-            console.log(array.join(' '))
-            console.log(`outer: ${outer} inner: ${inner}  valor: ${array[outer]}`);
+            
             if (array[outer] < array[inner]) {
+                
                 numeroTrocas++;
                 const [element] = array.splice(outer, 1);
                 const [barrinha] = bars.splice(outer, 1);
                 array.splice(inner, 0, element);
                 bars.splice(inner, 0, barrinha);
-                setTimeout(function() {
+                setTimeout(function () {
                     $("#espacoBarras").html(bars);
                 }, (1000));
             }
         }
     }
-    console.log(array.join(' '))
-    $("#numeroTrocas").val(numeroTrocas);
-    $("#numeroComparações").val(numeroComparacoes);
+    $("#numeroTrocasInsertion").val(numeroTrocas);
+    $("#numeroComparaçõesInsertion").val(numeroComparacoes);
     return array;
 }
 
-function AcaoInsertionSort(){
+selectionSort = (array) => {
+    let n = array.length;
+    let numeroTrocas = 0;
+    let numeroComparacoes = 0;
+    let tempoExecucao = 0;
+
+    for (let i = 0; i < n; i++) {
+        let min = i;
+        for (let j = i + 1; j < n; j++) {
+            numeroTrocas++
+            if (array[j] < array[min]) {
+                numeroComparacoes++
+                min = j;
+            }
+        }
+        if (min != i) {
+            numeroComparacoes++
+            let tmp = array[i];
+            array[i] = array[min];
+            array[min] = tmp;
+        }
+    }
+    $("#numeroTrocasSelection").val(numeroTrocas);
+    $("#numeroComparaçõesSelection").val(numeroComparacoes);
+    return array;
+}
+
+divide = (array) => {
+    if (array.length < 2) {
+      return array
+    }
+    const mid = Math.floor(array.length/2)
+    const smallOne = array.slice(0, mid)
+    const smallTwo = array.slice(mid)
+    return sort(divide(smallOne), divide(smallTwo))
+  }
+  
+  sort = (smallOne, smallTwo) => {
+    const sorted = []
+    while(smallOne.length && smallTwo.length) {
+      if (smallOne[0] <= smallTwo[0]) {
+        sorted.push(smallOne.shift())
+      } else {
+        sorted.push(smallTwo.shift())
+      }
+    }
+    const output = [...sorted, ...smallOne, ...smallTwo]
+    console.log(output)
+    return output
+  }
+  
+  const numbers = [8, 5, 6, 9, 3, 1, 4, 2, 7, 10]
+  console.log(divide(numbers))
+
+
+
+function Sort() {
     insertionSort(vector);
+    selectionSort(vector);
+    mergeSort(vector);
 }

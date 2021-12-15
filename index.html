@@ -38,14 +38,59 @@
 <body>
   <div class="container">
     <div class="mb-3">
-      <button type="button" class="btn btn-outline-primary mb-3" onClick="AcaoInsertionSort()">Insertion Sorter</button>
+      <button type="button" class="btn btn-outline-primary mb-3" onClick="Sort()">Sort</button>
+      <div class="section">Insertion Sort</div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Número Trocas</span>
-        <input id="numeroTrocas" type="text" class="form-control" disabled>
+        <input id="numeroTrocasInsertion" type="text" class="form-control" disabled>
         <span class="input-group-text" id="basic-addon1">Número de Comparações</span>
-        <input id="numeroComparações" type="text" class="form-control" disabled>
+        <input id="numeroComparaçõesInsertion" type="text" class="form-control" disabled>
         <span class="input-group-text" id="basic-addon1">Tempo de execução</span>
-        <input id="tempoExecucao" type="text" class="form-control" disabled>
+        <input id="tempoExecucaoInsertion" type="text" class="form-control" disabled>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="section">Selection Sort</div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Número Trocas</span>
+        <input id="numeroTrocasSelection" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Número de Comparações</span>
+        <input id="numeroComparaçõesSelection" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Tempo de execução</span>
+        <input id="tempoExecucaoSelection" type="text" class="form-control" disabled>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="section">Merge Sort</div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Número Trocas</span>
+        <input id="numeroTrocasMerge" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Número de Comparações</span>
+        <input id="numeroComparaçõesMerge" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Tempo de execução</span>
+        <input id="tempoExecucaoMerge" type="text" class="form-control" disabled>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="section">Heap Sort</div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Número Trocas</span>
+        <input id="numeroTrocasHeap" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Número de Comparações</span>
+        <input id="numeroComparaçõesHeap" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Tempo de execução</span>
+        <input id="tempoExecucaoHeap" type="text" class="form-control" disabled>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="section">Quick Sort</div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Número Trocas</span>
+        <input id="numeroTrocasQuick" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Número de Comparações</span>
+        <input id="numeroComparaçõesQuick" type="text" class="form-control" disabled>
+        <span class="input-group-text" id="basic-addon1">Tempo de execução</span>
+        <input id="tempoExecucaoQuick" type="text" class="form-control" disabled>
       </div>
     </div>
     <div>

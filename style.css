@@ -7,3 +7,9 @@
 #espacoBarras{
     height: 80vh;
 }
+.section {
+    font-size: 30px;
+    color: rgb(0, 153, 255);
+    text-decoration: underline;
+    margin-bottom: 1%;
+} 
