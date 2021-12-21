@@ -7,7 +7,7 @@ desvioPadrao = (lista) => {
         media += lista[i]
     }
 
-    media = media/lista.length
+    media = media / lista.length
 
     for (i = 0; i < lista.length; i++) {
         varianca += Math.pow(media - lista[i], 2);
@@ -255,228 +255,213 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
+class Method {
+    constructor(){
+        this.comparacoes = []
+        this.medComparacoes = 0
+        this.desComparacoes = 0
+        this.trocas = []
+        this.medTrocas = 0
+        this.desTrocas = 0
+        this.tempo = []
+        this.medTempo = 0
+        this.desTempo = 0
+    }
+    
+}
 
 function Sort() {
 
-    let insertionRan = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let insertionCres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let insertionDecres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
+    let insertionRan = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let insertionCres = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let insertionDecres = [new Method(), new Method(), new Method(), new Method(), new Method()]
 
-    let selectionRan = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let selectionCres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let selectionDecres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
+    let selectionRan = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let selectionCres = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let selectionDecres = [new Method(), new Method(), new Method(), new Method(), new Method()]
 
-    let heapRan = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let heapCres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let heapDecres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
+    let heapRan = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let heapCres = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let heapDecres = [new Method(), new Method(), new Method(), new Method(), new Method()]
 
-    let mergeRan = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let mergeCres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let mergeDecres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
+    let mergeRan = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let mergeCres = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let mergeDecres = [new Method(), new Method(), new Method(), new Method(), new Method()]
 
-    let quickRan = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let quickCres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
-    let quickDecres = {
-        medComparacoes: 0,
-        desComparacoes: 0,
-        medTrocas: 0,
-        desTrocas: 0,
-        medTempo: 0,
-        desTempo: 0
-    }
+    let quickRan = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let quickCres = [new Method(), new Method(), new Method(), new Method(), new Method()]
+    let quickDecres = [new Method(), new Method(), new Method(), new Method(), new Method()]
 
     let array800 = []
-        array800.push(
-        insertionCres,
-        insertionDecres,
-        insertionRan,
-        selectionCres,
-        selectionDecres,
-        selectionRan,
-        heapCres,
-        heapDecres,
-        heapRan,
-        mergeCres,
-        mergeDecres,
-        mergeRan,
-        quickCres,
-        quickDecres,
-        quickRan
-        )
+    array800 = [
+        "insertionRan:",
+        insertionRan[0],
+        "insertionCres:",
+        insertionCres[0],
+        "insertionDecres:",
+        insertionDecres[0],
+        "selectionRan:",
+        selectionRan[0],
+        "selectionCres:",
+        selectionCres[0],
+        "selectionDecres:",
+        selectionDecres[0],
+        "heapRan:",
+        heapRan[0],
+        "heapCres:",
+        heapCres[0],
+        "heapDecres:",
+        heapDecres[0],
+        "mergeRan:",
+        mergeRan[0],
+        "mergeCres:",
+        mergeCres[0],
+        "mergeDecres:",
+        mergeDecres[0],
+        "quickRan:",
+        quickRan[0],
+        "quickCres:",
+        quickCres[0],
+        "quickDecres:",
+        quickDecres[0],
+
+    ]
 
     let array2000 = []
-        array2000.push(
-        insertionCres,
-        insertionDecres,
-        insertionRan,
-        selectionCres,
-        selectionDecres,
-        selectionRan,
-        heapCres,
-        heapDecres,
-        heapRan,
-        mergeCres,
-        mergeDecres,
-        mergeRan,
-        quickCres,
-        quickDecres,
-        quickRan
-        )
+    array2000 = [
+        "insertionRan:",
+        insertionRan[1],
+        "insertionCres:",
+        insertionCres[1],
+        "insertionDecres:",
+        insertionDecres[1],
+        "selectionRan:",
+        selectionRan[1],
+        "selectionCres:",
+        selectionCres[1],
+        "selectionDecres:",
+        selectionDecres[1],
+        "heapRan:",
+        heapRan[1],
+        "heapCres:",
+        heapCres[1],
+        "heapDecres:",
+        heapDecres[1],
+        "mergeRan:",
+        mergeRan[1],
+        "mergeCres:",
+        mergeCres[1],
+        "mergeDecres:",
+        mergeDecres[1],
+        "quickRan:",
+        quickRan[1],
+        "quickCres:",
+        quickCres[1],
+        "quickDecres:",
+        quickDecres[1]
+    ]
 
     let array16000 = []
-        array16000.push(
-        insertionCres,
-        insertionDecres,
-        insertionRan,
-        selectionCres,
-        selectionDecres,
-        selectionRan,
-        heapCres,
-        heapDecres,
-        heapRan,
-        mergeCres,
-        mergeDecres,
-        mergeRan,
-        quickCres,
-        quickDecres,
-        quickRan
-        )
+    array16000 = [
+        "insertionRan:",
+        insertionRan[2],
+        "insertionCres:",
+        insertionCres[2],
+        "insertionDecres:",
+        insertionDecres[2],
+        "selectionRan:",
+        selectionRan[2],
+        "selectionCres:",
+        selectionCres[2],
+        "selectionDecres:",
+        selectionDecres[2],
+        "heapRan:",
+        heapRan[2],
+        "heapCres:",
+        heapCres[2],
+        "heapDecres:",
+        heapDecres[2],
+        "mergeRan:",
+        mergeRan[2],
+        "mergeCres:",
+        mergeCres[2],
+        "mergeDecres:",
+        mergeDecres[2],
+        "quickRan:",
+        quickRan[2],
+        "quickCres:",
+        quickCres[2],
+        "quickDecres:",
+        quickDecres[2]
+    ]
 
     let array42000 = []
-        array42000.push(
-        insertionCres,
-        insertionDecres,
-        insertionRan,
-        selectionCres,
-        selectionDecres,
-        selectionRan,
-        heapCres,
-        heapDecres,
-        heapRan,
-        mergeCres,
-        mergeDecres,
-        mergeRan,
-        quickCres,
-        quickDecres,
-        quickRan
-        )
+    array42000 = [
+        "insertionRan:",
+        insertionRan[3],
+        "insertionCres:",
+        insertionCres[3],
+        "insertionDecres:",
+        insertionDecres[3],
+        "selectionRan:",
+        selectionRan[3],
+        "selectionCres:",
+        selectionCres[3],
+        "selectionDecres:",
+        selectionDecres[3],
+        "heapRan:",
+        heapRan[3],
+        "heapCres:",
+        heapCres[3],
+        "heapDecres:",
+        heapDecres[3],
+        "mergeRan:",
+        mergeRan[3],
+        "mergeCres:",
+        mergeCres[3],
+        "mergeDecres:",
+        mergeDecres[3],
+        "quickRan:",
+        quickRan[3],
+        "quickCres:",
+        quickCres[3],
+        "quickDecres:",
+        quickDecres[3]
+    ]
 
     let array58000 = []
-        array58000.push(insertionCres,
-        insertionDecres,
-        insertionRan,
-        selectionCres,
-        selectionDecres,
-        selectionRan,
-        heapCres,
-        heapDecres,
-        heapRan,
-        mergeCres,
-        mergeDecres,
-        mergeRan,
-        quickCres,
-        quickDecres,
-        quickRan)
-        
+    array58000 = [
+        "insertionRan:",
+        insertionRan[4],
+        "insertionCres:",
+        insertionCres[4],
+        "insertionDecres:",
+        insertionDecres[4],
+        "selectionRan:",
+        selectionRan[4],
+        "selectionCres:",
+        selectionCres[4],
+        "selectionDecres:",
+        selectionDecres[4],
+        "heapRan:",
+        heapRan[4],
+        "heapCres:",
+        heapCres[4],
+        "heapDecres:",
+        heapDecres[4],
+        "mergeRan:",
+        mergeRan[4],
+        "mergeCres:",
+        mergeCres[4],
+        "mergeDecres:",
+        mergeDecres[4],
+        "quickRan:",
+        quickRan[4],
+        "quickCres:",
+        quickCres[4],
+        "quickDecres:",
+        quickDecres[4]]
+
 
     let arrayRan1 = [];
     let arrayRan12 = [];
@@ -569,10 +554,6 @@ function Sort() {
     let arrayDecres53 = [];
     let arrayDecres54 = [];
     let arrayDecres55 = [];
-
-    let comparResults = []
-    let trocaResults = []
-    let tempoResults = []
 
     for (let i = 0; i < 800; i++) {
         arrayRan1.push(getRandom(0, 9999));
@@ -675,16 +656,16 @@ function Sort() {
     }
 
     function ordena(array, op) {
-        if (op == 1){
-            array.sort(function (a, b){
+        if (op == 1) {
+            array.sort(function (a, b) {
                 return a - b;
             })
-        }else{
-            array.sort(function (a, b){
+        } else {
+            array.sort(function (a, b) {
                 return b - a;
             })
         }
-        
+
     }
 
     ordena(arrayCres1, 1)
@@ -748,86 +729,101 @@ function Sort() {
     ordena(arrayDecres54, 0)
     ordena(arrayDecres55, 0)
 
-    function calcula(array, metodo, objeto){
+    function calcula(array, metodo, objeto) {
         var resultado = []
         let estatisticas = []
 
-        switch (metodo){
+        switch (metodo) {
             case 0:
-                resultado.push(insertionSort(array[0]), insertionSort(array[1]), insertionSort(array[2]), insertionSort(array[3]), insertionSort(array[4])) 
-                estatisticas = desvioPadrao([resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0]])
+                resultado.push(insertionSort(array[0]), insertionSort(array[1]), insertionSort(array[2]), insertionSort(array[3]), insertionSort(array[4]))
+                objeto.comparacoes.push(resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0])
+                estatisticas = desvioPadrao(objeto.comparacoes)
                 objeto.desComparacoes = estatisticas[0]
                 objeto.medComparacoes = estatisticas[1]
 
-                estatisticas = desvioPadrao([resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1]])
+                objeto.trocas.push(resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1])
+                estatisticas = desvioPadrao(objeto.trocas)
                 objeto.desTrocas = estatisticas[0]
                 objeto.medTrocas = estatisticas[1]
-            
-                estatisticas = desvioPadrao([resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3]])
+
+                objeto.tempo.push(resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3])
+                estatisticas = desvioPadrao(objeto.tempo)
                 objeto.desTempo = estatisticas[0]
                 objeto.medTempo = estatisticas[1]
                 break
-            
+
             case 1:
-                resultado.push(selectionSort(array[0]), selectionSort(array[1]), selectionSort(array[2]), selectionSort(array[3]), insertionSort(array[4])) 
-                estatisticas = desvioPadrao([resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0]])
+                resultado.push(selectionSort(array[0]), selectionSort(array[1]), selectionSort(array[2]), selectionSort(array[3]), insertionSort(array[4]))
+                objeto.comparacoes.push(resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0])
+                estatisticas = desvioPadrao(objeto.comparacoes)
                 objeto.desComparacoes = estatisticas[0]
                 objeto.medComparacoes = estatisticas[1]
 
-                estatisticas = desvioPadrao([resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1]])
+                objeto.trocas.push(resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1])
+                estatisticas = desvioPadrao(objeto.trocas)
                 objeto.desTrocas = estatisticas[0]
                 objeto.medTrocas = estatisticas[1]
-            
-                estatisticas = desvioPadrao([resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3]])
+
+                objeto.tempo.push(resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3])
+                estatisticas = desvioPadrao(objeto.tempo)
                 objeto.desTempo = estatisticas[0]
                 objeto.medTempo = estatisticas[1]
-                break    
+                break
 
             case 2:
-                resultado.push(heapSort(array[0]), heapSort(array[1]), heapSort(array[2]), heapSort(array[3]), heapSort(array[4])) 
-                estatisticas = desvioPadrao([resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0]])
+                resultado.push(heapSort(array[0]), heapSort(array[1]), heapSort(array[2]), heapSort(array[3]), heapSort(array[4]))
+                objeto.comparacoes.push(resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0])
+                estatisticas = desvioPadrao(objeto.comparacoes)
                 objeto.desComparacoes = estatisticas[0]
                 objeto.medComparacoes = estatisticas[1]
 
-                estatisticas = desvioPadrao([resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1]])
+                objeto.trocas.push(resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1])
+                estatisticas = desvioPadrao(objeto.trocas)
                 objeto.desTrocas = estatisticas[0]
                 objeto.medTrocas = estatisticas[1]
-            
-                estatisticas = desvioPadrao([resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3]])
+
+                objeto.tempo.push(resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3])
+                estatisticas = desvioPadrao(objeto.tempo)
                 objeto.desTempo = estatisticas[0]
                 objeto.medTempo = estatisticas[1]
                 break
-            
+
             case 3:
-                resultado.push(mergeSort(array[0]), mergeSort(array[1]), mergeSort(array[2]), mergeSort(array[3]), mergeSort(array[4])) 
-                estatisticas = desvioPadrao([resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0]])
+                resultado.push(mergeSort(array[0]), mergeSort(array[1]), mergeSort(array[2]), mergeSort(array[3]), mergeSort(array[4]))
+                objeto.comparacoes.push(resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0])
+                estatisticas = desvioPadrao(objeto.comparacoes)
                 objeto.desComparacoes = estatisticas[0]
                 objeto.medComparacoes = estatisticas[1]
 
-                estatisticas = desvioPadrao([resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1]])
+                objeto.trocas.push(resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1])
+                estatisticas = desvioPadrao(objeto.trocas)
                 objeto.desTrocas = estatisticas[0]
                 objeto.medTrocas = estatisticas[1]
-            
-                estatisticas = desvioPadrao([resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3]])
+
+                objeto.tempo.push(resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3])
+                estatisticas = desvioPadrao(objeto.tempo)
                 objeto.desTempo = estatisticas[0]
                 objeto.medTempo = estatisticas[1]
                 break
-            
+
             case 4:
-                resultado.push(quickSort(array[0]), quickSort(array[1]), quickSort(array[2]), quickSort(array[3]), quickSort(array[4])) 
-                estatisticas = desvioPadrao([resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0]])
+                resultado.push(quickSort(array[0]), quickSort(array[1]), quickSort(array[2]), quickSort(array[3]), quickSort(array[4]))
+                objeto.comparacoes.push(resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0])
+                estatisticas = desvioPadrao(objeto.comparacoes)
                 objeto.desComparacoes = estatisticas[0]
                 objeto.medComparacoes = estatisticas[1]
 
-                estatisticas = desvioPadrao([resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1]])
+                objeto.trocas.push(resultado[0][1], resultado[1][1], resultado[2][1], resultado[3][1], resultado[4][1])
+                estatisticas = desvioPadrao(objeto.trocas)
                 objeto.desTrocas = estatisticas[0]
                 objeto.medTrocas = estatisticas[1]
-            
-                estatisticas = desvioPadrao([resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3]])
+
+                objeto.tempo.push(resultado[0][3], resultado[1][3], resultado[2][3], resultado[3][3], resultado[4][3])
+                estatisticas = desvioPadrao(objeto.tempo)
                 objeto.desTempo = estatisticas[0]
                 objeto.medTempo = estatisticas[1]
                 break
-            }
+        }
     }
 
     var arrayRan = []
@@ -843,10 +839,10 @@ function Sort() {
     arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
     arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
     arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
-
-    calcula(arrayRan, 0, array800[0])
-    calcula(arrayCres, 0, array800[1])
-    calcula(arrayDecres, 0, array800[2])
+    
+    calcula(arrayRan, 0, array800[1])
+    calcula(arrayCres, 0, array800[3])
+    calcula(arrayDecres, 0, array800[5])
 
 
     arrayRan = []
@@ -857,9 +853,9 @@ function Sort() {
     arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
     arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
 
-    calcula(arrayRan, 0, array2000[0])
-    calcula(arrayCres, 0, array2000[1])
-    calcula(arrayDecres, 0, array2000[2])
+    calcula(arrayRan, 0, array2000[1])
+    calcula(arrayCres, 0, array2000[3])
+    calcula(arrayDecres, 0, array2000[5])
 
     arrayRan = []
     arrayCres = []
@@ -869,9 +865,9 @@ function Sort() {
     arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
     arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
 
-    calcula(arrayRan, 0, array16000[0])
-    calcula(arrayCres, 0, array16000[1])
-    calcula(arrayDecres, 0, array16000[2])
+    calcula(arrayRan, 0, array16000[1])
+    calcula(arrayCres, 0, array16000[3])
+    calcula(arrayDecres, 0, array16000[5])
 
 
     arrayRan = []
@@ -882,9 +878,9 @@ function Sort() {
     arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
     arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 0, array42000[0])
-    calcula(arrayCres, 0, array42000[1])
-    calcula(arrayDecres, 0, array42000[2])
+    calcula(arrayRan, 0, array42000[1])
+    calcula(arrayCres, 0, array42000[3])
+    calcula(arrayDecres, 0, array42000[5])
 
 
     arrayRan = []
@@ -895,9 +891,9 @@ function Sort() {
     arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
     arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
 
-    calcula(arrayRan, 0, array58000[0])
-    calcula(arrayCres, 0, array58000[1])
-    calcula(arrayDecres, 0, array58000[2])
+    calcula(arrayRan, 0, array58000[1])
+    calcula(arrayCres, 0, array58000[3])
+    calcula(arrayDecres, 0, array58000[5])
 
 
     //selection Sort
@@ -909,11 +905,9 @@ function Sort() {
     arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
     arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
 
-    calcula(arrayRan, 1, array800[3])
-    calcula(arrayCres, 1, array800[4])
-    calcula(arrayDecres, 1, array800[5])
-
-
+    calcula(arrayRan, 1, array800[7])
+    calcula(arrayCres, 1, array800[9])
+    calcula(arrayDecres, 1, array800[11])
     arrayRan = []
     arrayCres = []
     arrayDecres = []
@@ -922,10 +916,9 @@ function Sort() {
     arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
     arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
 
-    calcula(arrayRan, 1, array2000[3])
-    calcula(arrayCres, 1, array2000[4])
-    calcula(arrayDecres, 1, array2000[5])
-
+    calcula(arrayRan, 1, array2000[7])
+    calcula(arrayCres, 1, array2000[9])
+    calcula(arrayDecres, 1, array2000[11])
     arrayRan = []
     arrayCres = []
     arrayDecres = []
@@ -934,11 +927,9 @@ function Sort() {
     arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
     arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
 
-    calcula(arrayRan, 1, array16000[3])
-    calcula(arrayCres, 1, array16000[4])
-    calcula(arrayDecres, 1, array16000[5])
-
-
+    calcula(arrayRan, 1, array16000[7])
+    calcula(arrayCres, 1, array16000[9])
+    calcula(arrayDecres, 1, array16000[11])
     arrayRan = []
     arrayCres = []
     arrayDecres = []
@@ -947,11 +938,9 @@ function Sort() {
     arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
     arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 1, array42000[3])
-    calcula(arrayCres, 1, array42000[4])
-    calcula(arrayDecres, 1, array42000[5])
-
-
+    calcula(arrayRan, 1, array42000[7])
+    calcula(arrayCres, 1, array42000[9])
+    calcula(arrayDecres, 1, array42000[11])
     arrayRan = []
     arrayCres = []
     arrayDecres = []
@@ -960,10 +949,9 @@ function Sort() {
     arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
     arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
 
-    calcula(arrayRan, 1, array58000[3])
-    calcula(arrayCres, 1, array58000[4])
-    calcula(arrayDecres, 1, array58000[5])
-
+    calcula(arrayRan, 1, array58000[7])
+    calcula(arrayCres, 1, array58000[9])
+    calcula(arrayDecres, 1, array58000[11])
     arrayRan = []
     arrayCres = []
     arrayDecres = []
@@ -972,9 +960,9 @@ function Sort() {
     arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
     arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
 
-    calcula(arrayRan, 2, array800[6])
-    calcula(arrayCres, 2, array800[7])
-    calcula(arrayDecres, 2, array800[8])
+    calcula(arrayRan, 2, array800[13])
+    calcula(arrayCres, 2, array800[15])
+    calcula(arrayDecres, 2, array800[17])
 
 
     arrayRan = []
@@ -985,9 +973,9 @@ function Sort() {
     arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
     arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
 
-    calcula(arrayRan, 2, array2000[6])
-    calcula(arrayCres, 2, array2000[7])
-    calcula(arrayDecres, 2, array2000[8])
+    calcula(arrayRan, 2, array2000[13])
+    calcula(arrayCres, 2, array2000[15])
+    calcula(arrayDecres, 2, array2000[17])
 
     arrayRan = []
     arrayCres = []
@@ -997,9 +985,9 @@ function Sort() {
     arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
     arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
 
-    calcula(arrayRan, 2, array16000[6])
-    calcula(arrayCres, 2, array16000[7])
-    calcula(arrayDecres, 2, array16000[8])
+    calcula(arrayRan, 2, array16000[13])
+    calcula(arrayCres, 2, array16000[15])
+    calcula(arrayDecres, 2, array16000[17])
 
 
 
@@ -1011,9 +999,9 @@ function Sort() {
     arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
     arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 2, array42000[6])
-    calcula(arrayCres, 2, array42000[7])
-    calcula(arrayDecres, 2, array42000[8])
+    calcula(arrayRan, 2, array42000[13])
+    calcula(arrayCres, 2, array42000[15])
+    calcula(arrayDecres, 2, array42000[17])
 
 
 
@@ -1025,9 +1013,9 @@ function Sort() {
     arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
     arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
 
-    calcula(arrayRan, 2, array58000[6])
-    calcula(arrayCres, 2, array58000[7])
-    calcula(arrayDecres, 2, array58000[8])
+    calcula(arrayRan, 2, array58000[13])
+    calcula(arrayCres, 2, array58000[15])
+    calcula(arrayDecres, 2, array58000[17])
 
 
     arrayRan = []
@@ -1038,9 +1026,9 @@ function Sort() {
     arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
     arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
 
-    calcula(arrayRan, 3, array800[9])
-    calcula(arrayCres, 3, array800[10])
-    calcula(arrayDecres, 3, array800[11])
+    calcula(arrayRan, 3, array800[19])
+    calcula(arrayCres, 3, array800[21])
+    calcula(arrayDecres, 3, array800[23])
 
 
     arrayRan = []
@@ -1051,9 +1039,9 @@ function Sort() {
     arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
     arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
 
-    calcula(arrayRan, 3, array2000[9])
-    calcula(arrayCres, 3, array2000[10])
-    calcula(arrayDecres, 3, array2000[11])
+    calcula(arrayRan, 3, array2000[19])
+    calcula(arrayCres, 3, array2000[21])
+    calcula(arrayDecres, 3, array2000[23])
 
     arrayRan = []
     arrayCres = []
@@ -1063,9 +1051,9 @@ function Sort() {
     arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
     arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
 
-    calcula(arrayRan, 3, array16000[9])
-    calcula(arrayCres, 3, array16000[10])
-    calcula(arrayDecres, 3, array16000[11])
+    calcula(arrayRan, 3, array16000[19])
+    calcula(arrayCres, 3, array16000[21])
+    calcula(arrayDecres, 3, array16000[23])
 
 
     arrayRan = []
@@ -1076,9 +1064,9 @@ function Sort() {
     arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
     arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 3, array42000[9])
-    calcula(arrayCres, 3, array42000[10])
-    calcula(arrayDecres, 3, array42000[11])
+    calcula(arrayRan, 3, array42000[19])
+    calcula(arrayCres, 3, array42000[21])
+    calcula(arrayDecres, 3, array42000[23])
 
 
     arrayRan = []
@@ -1089,9 +1077,9 @@ function Sort() {
     arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
     arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
 
-    calcula(arrayRan, 3, array58000[9])
-    calcula(arrayCres, 3, array58000[10])
-    calcula(arrayDecres, 3, array58000[11])
+    calcula(arrayRan, 3, array58000[19])
+    calcula(arrayCres, 3, array58000[21])
+    calcula(arrayDecres, 3, array58000[23])
 
     arrayRan = []
     arrayCres = []
@@ -1101,9 +1089,9 @@ function Sort() {
     arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
     arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
 
-    calcula(arrayRan, 4, array800[12])
-    calcula(arrayCres, 4, array800[13])
-    calcula(arrayDecres, 4, array800[14])
+    calcula(arrayRan, 4, array800[25])
+    calcula(arrayCres, 4, array800[27])
+    calcula(arrayDecres, 4, array800[29])
 
 
     arrayRan = []
@@ -1114,9 +1102,9 @@ function Sort() {
     arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
     arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
 
-    calcula(arrayRan, 4, array2000[12])
-    calcula(arrayCres, 4, array2000[13])
-    calcula(arrayDecres, 4, array2000[14])
+    calcula(arrayRan, 4, array2000[25])
+    calcula(arrayCres, 4, array2000[27])
+    calcula(arrayDecres, 4, array2000[29])
 
     arrayRan = []
     arrayCres = []
@@ -1126,9 +1114,9 @@ function Sort() {
     arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
     arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
 
-    calcula(arrayRan, 4, array16000[12])
-    calcula(arrayCres, 4, array16000[13])
-    calcula(arrayDecres, 4, array16000[14])
+    calcula(arrayRan, 4, array16000[25])
+    calcula(arrayCres, 4, array16000[27])
+    calcula(arrayDecres, 4, array16000[29])
 
 
     arrayRan = []
@@ -1139,9 +1127,9 @@ function Sort() {
     arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
     arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 4, array42000[12])
-    calcula(arrayCres, 4, array42000[13])
-    calcula(arrayDecres, 4, array42000[14])
+    calcula(arrayRan, 4, array42000[25])
+    calcula(arrayCres, 4, array42000[27])
+    calcula(arrayDecres, 4, array42000[29])
 
 
     arrayRan = []
@@ -1152,494 +1140,10 @@ function Sort() {
     arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
     arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
 
-    calcula(arrayRan, 4, array58000[12])
-    calcula(arrayCres, 4, array58000[13])
-    calcula(arrayDecres, 4, array58000[14])
+    calcula(arrayRan, 4, array58000[25])
+    calcula(arrayCres, 4, array58000[27])
+    calcula(arrayDecres, 4, array58000[29])
 
-/*
-    let rsort1 = insertionSort(arrayRan1)
-    let rsort12 = insertionSort(arrayRan12)
-    let rsort13 = insertionSort(arrayRan13)
-    let rsort14 = insertionSort(arrayRan14)
-    let rsort15 = insertionSort(arrayRan15)
-
-    let rsort2 = insertionSort(arrayRan2)
-    let rsort22 = insertionSort(arrayRan22)
-    let rsort23 = insertionSort(arrayRan23)
-    let rsort24 = insertionSort(arrayRan24)
-    let rsort25 = insertionSort(arrayRan25)
-
-    let rsort3 = insertionSort(arrayRan3)
-    let rsort32 = insertionSort(arrayRan32)
-    let rsort33 = insertionSort(arrayRan33)
-    let rsort34 = insertionSort(arrayRan34)
-    let rsort35 = insertionSort(arrayRan35)
-
-    let rsort4 = insertionSort(arrayRan4)
-    let rsort42 = insertionSort(arrayRan42)
-    let rsort43 = insertionSort(arrayRan43)
-    let rsort44 = insertionSort(arrayRan44)
-    let rsort45 = insertionSort(arrayRan45)
-
-    let rsort5 = insertionSort(arrayRan5)
-    let rsort52 = insertionSort(arrayRan52)
-    let rsort53 = insertionSort(arrayRan53)
-    let rsort54 = insertionSort(arrayRan54)
-    let rsort55 = insertionSort(arrayRan55)
-
-   
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desComparacoes = estatisticas[0]
-    insertionRan.medComparacoes = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTrocas = estatisticas[0]
-    insertionRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTempo = estatisticas[0]
-    insertionRan.medTempo = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desComparacoes = estatisticas[0]
-    insertionRan.medComparacoes = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTrocas = estatisticas[0]
-    insertionRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTempo = estatisticas[0]
-    insertionRan.medTempo = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desComparacoes = estatisticas[0]
-    insertionRan.medComparacoes = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTrocas = estatisticas[0]
-    insertionRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTempo = estatisticas[0]
-    insertionRan.medTempo = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desComparacoes = estatisticas[0]
-    insertionRan.medComparacoes = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTrocas = estatisticas[0]
-    insertionRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTempo = estatisticas[0]
-    insertionRan.medTempo = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    console.log(estatisticas)
-    insertionRan.desComparacoes = estatisticas[0]
-    insertionRan.medComparacoes = estatisticas[1]
-
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTrocas = estatisticas[0]
-    insertionRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    insertionRan.desTempo = estatisticas[0]
-    insertionRan.medTempo = estatisticas[1]
-
-
-    rsort1 = insertionSort(arrayCres1)
-    rsort2 = insertionSort(arrayCres2)
-    rsort3 = insertionSort(arrayCres3)
-    rsort4 = insertionSort(arrayCres4)
-    rsort5 = insertionSort(arrayCres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    insertionCres.desComparacoes = estatisticas[0]
-    insertionCres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    insertionCres.desTrocas = estatisticas[0]
-    insertionCres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    insertionCres.desTempo = estatisticas[0]
-    insertionCres.medTempo = estatisticas[1]
-
-
-    rsort1 = insertionSort(arrayDecres1)
-    rsort2 = insertionSort(arrayDecres2)
-    rsort3 = insertionSort(arrayDecres3)
-    rsort4 = insertionSort(arrayDecres4)
-    rsort5 = insertionSort(arrayDecres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    insertionDecres.desComparacoes = estatisticas[0]
-    insertionDecres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    insertionDecres.desTrocas = estatisticas[0]
-    insertionDecres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    insertionDecres.desTempo = estatisticas[0]
-    insertionDecres.medTempo = estatisticas[1]
-
-
-    rsort1 = selectionSort(arrayRan1)
-    rsort2 = selectionSort(arrayRan2)
-    rsort3 = selectionSort(arrayRan3)
-    rsort4 = selectionSort(arrayRan4)
-    rsort5 = selectionSort(arrayRan5)
-
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    selectionRan.desComparacoes = estatisticas[0]
-    selectionRan.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    selectionRan.desTrocas = estatisticas[0]
-    selectionRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    selectionRan.desTempo = estatisticas[0]
-    selectionRan.medTempo = estatisticas[1]
-
-
-    rsort1 = selectionSort(arrayCres1)
-    rsort2 = selectionSort(arrayCres2)
-    rsort3 = selectionSort(arrayCres3)
-    rsort4 = selectionSort(arrayCres4)
-    rsort5 = selectionSort(arrayCres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    selectionCres.desComparacoes = estatisticas[0]
-    selectionCres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    selectionCres.desTrocas = estatisticas[0]
-    selectionCres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    selectionCres.desTempo = estatisticas[0]
-    selectionCres.medTempo = estatisticas[1]
-
-
-    rsort1 = selectionSort(arrayDecres1)
-    rsort2 = selectionSort(arrayDecres2)
-    rsort3 = selectionSort(arrayDecres3)
-    rsort4 = selectionSort(arrayDecres4)
-    rsort5 = selectionSort(arrayDecres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    selectionDecres.desComparacoes = estatisticas[0]
-    selectionDecres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    selectionDecres.desTrocas = estatisticas[0]
-    selectionDecres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    selectionDecres.desTempo = estatisticas[0]
-    selectionDecres.medTempo = estatisticas[1]
-
-    rsort1 = heapSort(arrayRan1)
-    rsort2 = heapSort(arrayRan2)
-    rsort3 = heapSort(arrayRan3)
-    rsort4 = heapSort(arrayRan4)
-    rsort5 = heapSort(arrayRan5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    heapRan.desComparacoes = estatisticas[0]
-    heapRan.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    heapRan.desTrocas = estatisticas[0]
-    heapRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    heapRan.desTempo = estatisticas[0]
-    heapRan.medTempo = estatisticas[1]
-
-
-    rsort1 = heapSort(arrayCres1)
-    rsort2 = heapSort(arrayCres2)
-    rsort3 = heapSort(arrayCres3)
-    rsort4 = heapSort(arrayCres4)
-    rsort5 = heapSort(arrayCres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    heapCres.desComparacoes = estatisticas[0]
-    heapCres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    heapCres.desTrocas = estatisticas[0]
-    heapCres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    heapCres.desTempo = estatisticas[0]
-    heapCres.medTempo = estatisticas[1]
-
-
-    rsort1 = heapSort(arrayDecres1)
-    rsort2 = heapSort(arrayDecres2)
-    rsort3 = heapSort(arrayDecres3)
-    rsort4 = heapSort(arrayDecres4)
-    rsort5 = heapSort(arrayDecres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    heapDecres.desComparacoes = estatisticas[0]
-    heapDecres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    heapDecres.desTrocas = estatisticas[0]
-    heapDecres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    heapDecres.desTempo = estatisticas[0]
-    heapDecres.medTempo = estatisticas[1]
-
-
-    rsort1 = mergeSort(arrayRan1)
-    rsort2 = mergeSort(arrayRan2)
-    rsort3 = mergeSort(arrayRan3)
-    rsort4 = mergeSort(arrayRan4)
-    rsort5 = mergeSort(arrayRan5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    mergeRan.desComparacoes = estatisticas[0]
-    mergeRan.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    mergeRan.desTrocas = estatisticas[0]
-    mergeRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    mergeRan.desTempo = estatisticas[0]
-    mergeRan.medTempo = estatisticas[1]
-
-
-    rsort1 = mergeSort(arrayCres1)
-    rsort2 = mergeSort(arrayCres2)
-    rsort3 = mergeSort(arrayCres3)
-    rsort4 = mergeSort(arrayCres4)
-    rsort5 = mergeSort(arrayCres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    mergeCres.desComparacoes = estatisticas[0]
-    mergeCres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    mergeCres.desTrocas = estatisticas[0]
-    mergeCres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    mergeCres.desTempo = estatisticas[0]
-    mergeCres.medTempo = estatisticas[1]
-
-
-    rsort1 = mergeSort(arrayDecres1)
-    rsort2 = mergeSort(arrayDecres2)
-    rsort3 = mergeSort(arrayDecres3)
-    rsort4 = mergeSort(arrayDecres4)
-    rsort5 = mergeSort(arrayDecres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    mergeDecres.desComparacoes = estatisticas[0]
-    mergeDecres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    mergeDecres.desTrocas = estatisticas[0]
-    mergeDecres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    mergeDecres.desTempo = estatisticas[0]
-    mergeDecres.medTempo = estatisticas[1]
-
-
-    rsort1 = quickSort(arrayRan1)
-    rsort2 = quickSort(arrayRan2)
-    rsort3 = quickSort(arrayRan3)
-    rsort4 = quickSort(arrayRan4)
-    rsort5 = quickSort(arrayRan5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    quickRan.desComparacoes = estatisticas[0]
-    quickRan.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    quickRan.desTrocas = estatisticas[0]
-    quickRan.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    quickRan.desTempo = estatisticas[0]
-    quickRan.medTempo = estatisticas[1]
-
-
-    rsort1 = quickSort(arrayCres1)
-    rsort2 = quickSort(arrayCres2)
-    rsort3 = quickSort(arrayCres3)
-    rsort4 = quickSort(arrayCres4)
-    rsort5 = quickSort(arrayCres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    quickCres.desComparacoes = estatisticas[0]
-    quickCres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    quickCres.desTrocas = estatisticas[0]
-    quickCres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    quickCres.desTempo = estatisticas[0]
-    quickCres.medTempo = estatisticas[1]
-
-
-    rsort1 = quickSort(arrayDecres1)
-    rsort2 = quickSort(arrayDecres2)
-    rsort3 = quickSort(arrayDecres3)
-    rsort4 = quickSort(arrayDecres4)
-    rsort5 = quickSort(arrayDecres5)
-
-    comparResults = []
-    comparResults.push(rsort1[0], rsort2[0], rsort3[0], rsort4[0], rsort5[0])
-    estatisticas = desvioPadrao(comparResults)
-    quickDecres.desComparacoes = estatisticas[0]
-    quickDecres.medComparacoes = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[1], rsort2[1], rsort3[1], rsort4[1], rsort5[1])
-    estatisticas = desvioPadrao(comparResults)
-    quickDecres.desTrocas = estatisticas[0]
-    quickDecres.medTrocas = estatisticas[1]
-
-    comparResults = []
-    comparResults.push(rsort1[3], rsort2[3], rsort3[3], rsort4[3], rsort5[3])
-    estatisticas = desvioPadrao(comparResults)
-    quickDecres.desTempo = estatisticas[0]
-    quickDecres.medTempo = estatisticas[1]
-*/
-    
     console.log("Array 800:\n")
     console.log(array800)
     console.log("Array 2000:\n")
