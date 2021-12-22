@@ -132,7 +132,9 @@ merge = (left, right) => {
             arr.push(left.shift())  
         } else {
             arr.push(right.shift()) 
-            numTrocas++
+            
+            if (left[0] > right[0])
+                numTrocas++
         }
     }
 
@@ -863,190 +865,190 @@ function Sort() {
 
 
     //insertion Sort
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
-    arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
-    arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
+    // arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
+    // arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
+    // arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
 
-    calcula(arrayRan, 0, array800[1])
-    calcula(arrayCres, 0, array800[3])
-    calcula(arrayDecres, 0, array800[5])
-
-
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
-    arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
-    arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
-
-    calcula(arrayRan, 0, array2000[1])
-    calcula(arrayCres, 0, array2000[3])
-    calcula(arrayDecres, 0, array2000[5])
-
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
-    arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
-    arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
-
-    calcula(arrayRan, 0, array16000[1])
-    calcula(arrayCres, 0, array16000[3])
-    calcula(arrayDecres, 0, array16000[5])
+    // calcula(arrayRan, 0, array800[1])
+    // calcula(arrayCres, 0, array800[3])
+    // calcula(arrayDecres, 0, array800[5])
 
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
-    arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
-    arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
+    // arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
+    // arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
+    // arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
 
-    calcula(arrayRan, 0, array42000[1])
-    calcula(arrayCres, 0, array42000[3])
-    calcula(arrayDecres, 0, array42000[5])
+    // calcula(arrayRan, 0, array2000[1])
+    // calcula(arrayCres, 0, array2000[3])
+    // calcula(arrayDecres, 0, array2000[5])
 
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
+    // arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
+    // arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
 
-    arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
-    arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
-    arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
-
-    calcula(arrayRan, 0, array58000[1])
-    calcula(arrayCres, 0, array58000[3])
-    calcula(arrayDecres, 0, array58000[5])
-
-
-    //selection Sort
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
-    arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
-    arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
-
-    calcula(arrayRan, 1, array800[7])
-    calcula(arrayCres, 1, array800[9])
-    calcula(arrayDecres, 1, array800[11])
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
-    arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
-    arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
-
-    calcula(arrayRan, 1, array2000[7])
-    calcula(arrayCres, 1, array2000[9])
-    calcula(arrayDecres, 1, array2000[11])
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
-    arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
-    arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
-
-    calcula(arrayRan, 1, array16000[7])
-    calcula(arrayCres, 1, array16000[9])
-    calcula(arrayDecres, 1, array16000[11])
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
-    arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
-    arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
-
-    calcula(arrayRan, 1, array42000[7])
-    calcula(arrayCres, 1, array42000[9])
-    calcula(arrayDecres, 1, array42000[11])
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
-    arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
-    arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
-
-    calcula(arrayRan, 1, array58000[7])
-    calcula(arrayCres, 1, array58000[9])
-    calcula(arrayDecres, 1, array58000[11])
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
-    arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
-    arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
-
-    calcula(arrayRan, 2, array800[13])
-    calcula(arrayCres, 2, array800[15])
-    calcula(arrayDecres, 2, array800[17])
+    // calcula(arrayRan, 0, array16000[1])
+    // calcula(arrayCres, 0, array16000[3])
+    // calcula(arrayDecres, 0, array16000[5])
 
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
-    arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
-    arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
+    // arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
+    // arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
+    // arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 2, array2000[13])
-    calcula(arrayCres, 2, array2000[15])
-    calcula(arrayDecres, 2, array2000[17])
-
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
-    arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
-    arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
-
-    calcula(arrayRan, 2, array16000[13])
-    calcula(arrayCres, 2, array16000[15])
-    calcula(arrayDecres, 2, array16000[17])
+    // calcula(arrayRan, 0, array42000[1])
+    // calcula(arrayCres, 0, array42000[3])
+    // calcula(arrayDecres, 0, array42000[5])
 
 
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
+    // arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
+    // arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
 
-    arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
-    arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
-    arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
+    // calcula(arrayRan, 0, array58000[1])
+    // calcula(arrayCres, 0, array58000[3])
+    // calcula(arrayDecres, 0, array58000[5])
 
-    calcula(arrayRan, 2, array42000[13])
-    calcula(arrayCres, 2, array42000[15])
-    calcula(arrayDecres, 2, array42000[17])
+
+    // //selection Sort
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
+    // arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
+    // arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
+
+    // calcula(arrayRan, 1, array800[7])
+    // calcula(arrayCres, 1, array800[9])
+    // calcula(arrayDecres, 1, array800[11])
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
+    // arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
+    // arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
+
+    // calcula(arrayRan, 1, array2000[7])
+    // calcula(arrayCres, 1, array2000[9])
+    // calcula(arrayDecres, 1, array2000[11])
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
+    // arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
+    // arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
+
+    // calcula(arrayRan, 1, array16000[7])
+    // calcula(arrayCres, 1, array16000[9])
+    // calcula(arrayDecres, 1, array16000[11])
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
+    // arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
+    // arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
+
+    // calcula(arrayRan, 1, array42000[7])
+    // calcula(arrayCres, 1, array42000[9])
+    // calcula(arrayDecres, 1, array42000[11])
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
+    // arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
+    // arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
+
+    // calcula(arrayRan, 1, array58000[7])
+    // calcula(arrayCres, 1, array58000[9])
+    // calcula(arrayDecres, 1, array58000[11])
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
+    // arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
+    // arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
+
+    // calcula(arrayRan, 2, array800[13])
+    // calcula(arrayCres, 2, array800[15])
+    // calcula(arrayDecres, 2, array800[17])
+
+
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
+    // arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
+    // arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
+
+    // calcula(arrayRan, 2, array2000[13])
+    // calcula(arrayCres, 2, array2000[15])
+    // calcula(arrayDecres, 2, array2000[17])
+
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
+    // arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
+    // arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
+
+    // calcula(arrayRan, 2, array16000[13])
+    // calcula(arrayCres, 2, array16000[15])
+    // calcula(arrayDecres, 2, array16000[17])
 
 
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
-    arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
-    arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
+    // arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
+    // arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
+    // arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 2, array58000[13])
-    calcula(arrayCres, 2, array58000[15])
-    calcula(arrayDecres, 2, array58000[17])
+    // calcula(arrayRan, 2, array42000[13])
+    // calcula(arrayCres, 2, array42000[15])
+    // calcula(arrayDecres, 2, array42000[17])
+
+
+
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
+    // arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
+    // arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
+
+    // calcula(arrayRan, 2, array58000[13])
+    // calcula(arrayCres, 2, array58000[15])
+    // calcula(arrayDecres, 2, array58000[17])
 
 
     arrayRan = []
@@ -1112,68 +1114,68 @@ function Sort() {
     calcula(arrayCres, 3, array58000[21])
     calcula(arrayDecres, 3, array58000[23])
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
-    arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
-    arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
+    // arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
+    // arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
+    // arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
 
-    calcula(arrayRan, 4, array800[25])
-    calcula(arrayCres, 4, array800[27])
-    calcula(arrayDecres, 4, array800[29])
-
-
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
-    arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
-    arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
-
-    calcula(arrayRan, 4, array2000[25])
-    calcula(arrayCres, 4, array2000[27])
-    calcula(arrayDecres, 4, array2000[29])
-
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
-
-    arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
-    arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
-    arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
-
-    calcula(arrayRan, 4, array16000[25])
-    calcula(arrayCres, 4, array16000[27])
-    calcula(arrayDecres, 4, array16000[29])
+    // calcula(arrayRan, 4, array800[25])
+    // calcula(arrayCres, 4, array800[27])
+    // calcula(arrayDecres, 4, array800[29])
 
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
-    arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
-    arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
+    // arrayRan.push(arrayRan2, arrayRan22, arrayRan23, arrayRan24, arrayRan25)
+    // arrayCres.push(arrayCres2, arrayCres22, arrayCres23, arrayCres24, arrayCres25)
+    // arrayDecres.push(arrayDecres2, arrayDecres22, arrayDecres23, arrayDecres24, arrayDecres25)
 
-    calcula(arrayRan, 4, array42000[25])
-    calcula(arrayCres, 4, array42000[27])
-    calcula(arrayDecres, 4, array42000[29])
+    // calcula(arrayRan, 4, array2000[25])
+    // calcula(arrayCres, 4, array2000[27])
+    // calcula(arrayDecres, 4, array2000[29])
+
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan3, arrayRan32, arrayRan33, arrayRan34, arrayRan35)
+    // arrayCres.push(arrayCres3, arrayCres32, arrayCres33, arrayCres34, arrayCres35)
+    // arrayDecres.push(arrayDecres3, arrayDecres32, arrayDecres33, arrayDecres34, arrayDecres35)
+
+    // calcula(arrayRan, 4, array16000[25])
+    // calcula(arrayCres, 4, array16000[27])
+    // calcula(arrayDecres, 4, array16000[29])
 
 
-    arrayRan = []
-    arrayCres = []
-    arrayDecres = []
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
 
-    arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
-    arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
-    arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
+    // arrayRan.push(arrayRan4, arrayRan42, arrayRan43, arrayRan44, arrayRan45)
+    // arrayCres.push(arrayCres4, arrayCres42, arrayCres43, arrayCres44, arrayCres45)
+    // arrayDecres.push(arrayDecres4, arrayDecres42, arrayDecres43, arrayDecres44, arrayDecres45)
 
-    calcula(arrayRan, 4, array58000[25])
-    calcula(arrayCres, 4, array58000[27])
-    calcula(arrayDecres, 4, array58000[29])
+    // calcula(arrayRan, 4, array42000[25])
+    // calcula(arrayCres, 4, array42000[27])
+    // calcula(arrayDecres, 4, array42000[29])
+
+
+    // arrayRan = []
+    // arrayCres = []
+    // arrayDecres = []
+
+    // arrayRan.push(arrayRan5, arrayRan52, arrayRan53, arrayRan54, arrayRan55)
+    // arrayCres.push(arrayCres5, arrayCres52, arrayCres53, arrayCres54, arrayCres55)
+    // arrayDecres.push(arrayDecres5, arrayDecres52, arrayDecres53, arrayDecres54, arrayDecres55)
+
+    // calcula(arrayRan, 4, array58000[25])
+    // calcula(arrayCres, 4, array58000[27])
+    // calcula(arrayDecres, 4, array58000[29])
 
     console.log("Array 800:\n")
     console.log(array800)
