@@ -93,53 +93,52 @@ selectionSort = (array, pos) => {
 
 
 //Merge Sort
+let numTrocas = 0;
+let numComparacoes = 0;
 
-mergeSort = (array) => {
+mergeSortCall = (array) => {
     let vetor = [...array];
-    let numeroTrocas = 0;
-    let numeroComparacoes = 0;
     let result = []
-    let sortr
-
     let timestamp = Date.now()
 
-    if (vetor.length < 2) {
-        return vetor
-    }
-    numeroComparacoes++
-    const mid = Math.floor(vetor.length / 2)
-    const smallOne = vetor.slice(0, mid)
-    const smallTwo = vetor.slice(mid)
+    numTrocas = 0;
+    numComparacoes = 0;
 
-    sortr = sort(mergeSort(smallOne), mergeSort(smallTwo), numeroTrocas, numeroComparacoes)
+    const ret = mergeSort(vetor)
 
     let timestampEnd = Date.now()
 
-    result.push(sortr[0], sortr[1], vetor, timestampEnd - timestamp)
-
+    result.push(numComparacoes, numTrocas, ret, timestampEnd - timestamp)
+    
     return result
 }
 
-sort = (smallOne, smallTwo, trocas, comparacoes) => {
-    const sorted = []
-    let result = []
+mergeSort = (array) => {
+    const half = array.length / 2
+    
+    if(array.length < 2){
+      return array 
+    }
+    
+    const left = array.splice(0, half)
+    return merge(mergeSort(left), mergeSort(array))
+  }
 
-    while (smallOne.length && smallTwo.length) {
-        trocas++
-        if (smallOne[0] <= smallTwo[0]) {
-            sorted.push(smallOne.shift())
-
+merge = (left, right) => {
+    let arr = []
+    while (left.length && right.length) {
+        numComparacoes++
+        if (left[0] < right[0]) {
+            arr.push(left.shift())  
         } else {
-            sorted.push(smallTwo.shift())
+            arr.push(right.shift()) 
+            numTrocas++
         }
-        comparacoes += 2
     }
 
-    result.push(comparacoes, trocas)
-    const output = [...sorted, ...smallOne, ...smallTwo]
-
-    return result
+    return [ ...arr, ...left, ...right ]
 }
+
 
 
 
@@ -821,7 +820,7 @@ function Sort() {
                 break
 
             case 3:
-                resultado.push(mergeSort(array[0]), mergeSort(array[1]), mergeSort(array[2]), mergeSort(array[3]), mergeSort(array[4]))
+                resultado.push(mergeSortCall(array[0]), mergeSortCall(array[1]), mergeSortCall(array[2]), mergeSortCall(array[3]), mergeSortCall(array[4]))
                 objeto.comparacoes.push(resultado[0][0], resultado[1][0], resultado[2][0], resultado[3][0], resultado[4][0])
                 estatisticas = desvioPadrao(objeto.comparacoes)
                 objeto.desComparacoes = estatisticas[0]
