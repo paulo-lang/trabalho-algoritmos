@@ -220,43 +220,75 @@ const heapSort = (array, pos) => {
 
 
 //Quick Sort
-quickSort = (array, pos) => {
-    let vetor = [...array];
-    let numeroTrocas = 0
-    let numeroComparacoes = 0
+function partition(arr, start, end, trocas, comparacoes) {
+    let result = []
+
+    const pivotValue = arr[end];
+    let pivotIndex = start;
+    for (let i = start; i < end; i++) {
+
+        if (arr[i] < pivotValue) {
+            [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+            trocas++
+            pivotIndex++;
+        }
+        comparacoes++
+    }
+
+    // Putting the pivot value in the middle
+    [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]]
+
+    trocas++
+
+    result.push(pivotIndex, comparacoes, trocas)
+
+    return result;
+};
+
+function quickSort(arr) {
+    stack = [];
+    let vetor = [...arr]
+    var numeroTrocas = 0
+    var numeroComparacoes = 0
     let result = []
     let timestamp = Date.now()
+    stack.push(0);
+    stack.push(vetor.length - 1);
 
-    if (vetor.length < 2) {
-        return vetor
-    }
-    numeroComparacoes++
-    const chosenIndex = Math.floor(vetor.length / 2)
-    const chosen = vetor[chosenIndex]
-    const a = []
-    const b = []
-    for (let i = 0; i < chosenIndex; i++) {
-        numeroTrocas++
-        const temp = vetor[i]
-        temp < chosen ? a.push(temp) : b.push(temp)
+    while (stack[stack.length - 1] >= 0) {
+        numeroComparacoes++
+        end = stack.pop();
+        start = stack.pop();
+        pivotIndex = partition(vetor, start, end, numeroTrocas, numeroComparacoes);
+
+        numeroComparacoes = pivotIndex[1]
+        numeroTrocas = pivotIndex[2]
+
+        if (pivotIndex[0] - 1 > start) {
+            stack.push(start);
+            stack.push(pivotIndex[0] - 1);
+        }
+        numeroComparacoes++
+
+
+        if (pivotIndex[0] + 1 < end) {
+            stack.push(pivotIndex[0] + 1);
+            stack.push(end);
+        }
         numeroComparacoes++
     }
-
-    quickSort(a)
-    quickSort(b)
-
     let timestampEnd = Date.now()
-
     result.push(numeroComparacoes, numeroTrocas, vetor, timestampEnd - timestamp)
     return result
 }
+
 
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 class Method {
-    constructor(){
+    constructor() {
         this.comparacoes = []
         this.medComparacoes = 0
         this.desComparacoes = 0
@@ -267,7 +299,7 @@ class Method {
         this.medTempo = 0
         this.desTempo = 0
     }
-    
+
 }
 
 function Sort() {
@@ -839,7 +871,7 @@ function Sort() {
     arrayRan.push(arrayRan1, arrayRan12, arrayRan13, arrayRan14, arrayRan15)
     arrayCres.push(arrayCres1, arrayCres12, arrayCres13, arrayCres14, arrayCres15)
     arrayDecres.push(arrayDecres1, arrayDecres12, arrayDecres13, arrayDecres14, arrayDecres15)
-    
+
     calcula(arrayRan, 0, array800[1])
     calcula(arrayCres, 0, array800[3])
     calcula(arrayDecres, 0, array800[5])
